@@ -91,6 +91,7 @@ import { ShowMessagerieAdminComponent } from './show-messagerie-admin/show-messa
 import { ShowMessagerieUserComponent } from './show-messagerie-user/show-messagerie-user.component';
 import { ShowMessagerieVisitorAdminComponent } from './show-messagerie-visitor-admin/show-messagerie-visitor-admin.component';
 import { SettingProfilUserComponent } from './setting-profil-user/setting-profil-user.component';
+import { ConnectionComponent } from './connection/connection.component';
 
 
 
@@ -165,6 +166,7 @@ export function getBaseUrl() {
     SettingProfilUserComponent,
     ListProjectsByFiltreByTagUserComponent,
     ListProjectsByFiltreByTagAdminComponent,
+    ConnectionComponent,
   ],
   imports: [
     BrowserModule,
