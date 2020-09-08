@@ -92,6 +92,8 @@ import { ShowMessagerieUserComponent } from './show-messagerie-user/show-message
 import { ShowMessagerieVisitorAdminComponent } from './show-messagerie-visitor-admin/show-messagerie-visitor-admin.component';
 import { SettingProfilUserComponent } from './setting-profil-user/setting-profil-user.component';
 import { ConnectionComponent } from './connection/connection.component';
+import { LendMeEnBrefComponent } from './lend-me-en-bref/lend-me-en-bref.component';
+import { FAQComponent } from './faq/faq.component';
 
 
 
@@ -167,6 +169,8 @@ export function getBaseUrl() {
     ListProjectsByFiltreByTagUserComponent,
     ListProjectsByFiltreByTagAdminComponent,
     ConnectionComponent,
+    LendMeEnBrefComponent,
+    FAQComponent,
   ],
   imports: [
     BrowserModule,
