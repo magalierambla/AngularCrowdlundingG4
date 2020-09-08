@@ -14,17 +14,9 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 
 export class apiHttpSpringBootService {
+ 
 
-  // https://json-server-growdlending.herokuapp.com
-
-  // https://api-springboot-crowdfunding-h2.herokuapp.com/
-
-  // http://api-spring-boot-crowdlending-api-spring-boot-crowdlending.apps.us-east-2.starter.openshift-online.com/api
-
-  // tslint:disable-next-line:max-line-length
-  //--> private apiUrlCloud = 'https://api-springboot-crowdfunding-h2.herokuapp.com/api';
-
-  private apiUrlCloud = 'https://api-spring-boot-h2-database.herokuapp.com/api';
+  private apiUrlCloud = 'http://localhost:8080/api';
 
   constructor(private http: HttpClient,  @Inject('BASE_URL') baseUrl: string) {
 
