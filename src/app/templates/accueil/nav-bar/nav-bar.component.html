@@ -21,34 +21,32 @@
 
         <!-- Rubrique : A propos -->
         <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">Lend Me en Bref</a>
         </li>
 
         <!-- Rubrique : Login -->
         <li class="nav-item">
-          <a class="nav-link" routerLink="/Identification" routerLinkActive="active">Login</a>
+          <a class="nav-link" routerLink="/Identification" routerLinkActive="active">Connexion</a>
         </li>
 
         <!-- Rubrique : FAQ pour répondre aux interrogations des utilisateurs -->
+
         <li class="nav-item">
-          <a class="nav-link" href="#">F.A.Q.</a>
+          <a class="nav-link" routerLink="/page-contact" routerLinkActive="active"> Nous contacter</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" routerLink="/page-contact" routerLinkActive="active">
-            <img src="./assets/img/contact.png" alt="Contact" width="34" height="34">
-          </a>
+          <a class="nav-link" href="#">FAQ</a>
         </li>
 
         <!-- Barre de RECHERCHE pour recherche par catégorie de projets -->
-        <li>
-        <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un projet" aria-label="Rechercher un projet">
-        </li>
-        <li style="margin-left:2%">
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Rechercher</button>
-        </li>
+
+      <!--  <li style="margin-left:2%"> -->
+       <!--<button class="btn btn-outline-info my-2 my-sm-0" type="submit">Rechercher</button>-->
+       <!--</li>-->
 
         <!-- Intégration de l'internationnalisation à la barre de navigation -->
-        <li style="margin-left:2%">
+        <!--  <li style="margin-left:2%">
         <img src="./assets/img/fr.png" alt="Drapeau Français" width="45" height="34" (click)="switchLang('fr')" >
         </li>
         <li style="margin-left:2%">
@@ -71,9 +69,9 @@
         </li>
         <li style="margin-left:2%">
           <img src="./assets/img/zh-Hant.png" alt="Drapeau Chinois" width="45" height="34"  (click)="switchLang('zh-Hant')">
-        </li>
+        </li> -->
        <!-- <li class="nav-item" style="margin-left:2%">
-          <span class="form-inline"> 
+          <span class="form-inline">
             <select    class="form-control"    #selectedLang        (change)="switchLang(selectedLang.value)">
               <option *ngFor="let language of translate.getLangs()"  [value]="language"     [selected]="language === translate.currentLang">
                 {{ language }}
@@ -89,4 +87,4 @@
 
 
 
-  
+
