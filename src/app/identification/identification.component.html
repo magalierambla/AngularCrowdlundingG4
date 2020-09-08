@@ -1,13 +1,16 @@
 <ngx-ui-loader></ngx-ui-loader>
+
 <app-nav-bar-accueil></app-nav-bar-accueil>
+
 <div class="jumbotron my-4">
+  <h3>Inscription</h3>
+
   <div class="alert alert-danger" *ngIf="isErreurInscription">
     <strong>Erreur!</strong> inscription
   </div>
-  <h3>Inscription</h3>
+
   <form
     class="form-horizontal"
-    id="signUpForm"
     #inscriptionForm="ngForm"
     (ngSubmit)="onFormSubmitInscription()"
   >
@@ -17,7 +20,7 @@
         class="form-control"
         [(ngModel)]="ObjetInscription.nom"
         name="nomInscription"
-        placeholder="votre nom *"
+        placeholder="Votre nom *"
         required
         value=""
       />
@@ -29,7 +32,7 @@
         class="form-control"
         [(ngModel)]="ObjetInscription.prenom"
         name="prenomInscription"
-        placeholder="votre prenom *"
+        placeholder="Votre prenom *"
         required
         value=""
       />
@@ -42,9 +45,12 @@
           [(ngModel)]="ObjetInscription.sex"
           name="sexInscription"
           required
-          value="Selectionner votre sexe"
+          value=""
         >
+          <option value="">Selectionner votre sexe</option>
+
           <option value="H">Homme</option>
+
           <option value="F">Femme</option>
         </select>
       </div>
@@ -56,7 +62,7 @@
         class="form-control"
         [(ngModel)]="ObjetInscription.pseudo_name"
         name="pseudo_nameInscription"
-        placeholder="votre pseudo-name *"
+        placeholder="Votre pseudo *"
         required
         value=""
       />
@@ -64,12 +70,11 @@
 
     <div class="form-group">
       <input
-        type="text"
+        type="email"
         class="form-control"
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
         [(ngModel)]="ObjetInscription.login"
         name="emailInscription"
-        placeholder="Your Email *"
+        placeholder="Email *"
         required
         value=""
       />
@@ -80,7 +85,7 @@
         class="form-control"
         [(ngModel)]="ObjetInscription.password"
         name="passwordInscription"
-        placeholder="Your Password *"
+        placeholder="Mot de passe *"
         required
         value=""
       />
@@ -88,7 +93,7 @@
 
     <div class="form-group">
       <dp-date-picker
-        placeholder="date de naissance"
+        placeholder="Date de naissance"
         (onChange)="addEventDateNaissance($event)"
         required="true"
         [config]="datePickerConfig"
@@ -105,9 +110,8 @@
 
     <div class="form-group">
       <button
-        class="btn btn-danger"
-        color="warn"
         type="submit"
+        class="btn btn-primary"
         [disabled]="!inscriptionForm.form.valid"
       >
         Inscription
