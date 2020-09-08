@@ -93,7 +93,7 @@ import { ShowMessagerieVisitorAdminComponent } from './show-messagerie-visitor-a
 import { SettingProfilUserComponent } from './setting-profil-user/setting-profil-user.component';
 import { ConnectionComponent } from './connection/connection.component';
 import { LendMeEnBrefComponent } from './lend-me-en-bref/lend-me-en-bref.component';
-import { FAQComponent } from './faq/faq.component';
+import { FaqComponent } from './faq/faq.component';
 
 
 
@@ -170,7 +170,7 @@ export function getBaseUrl() {
     ListProjectsByFiltreByTagAdminComponent,
     ConnectionComponent,
     LendMeEnBrefComponent,
-    FAQComponent,
+    FaqComponent,
   ],
   imports: [
     BrowserModule,

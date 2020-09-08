@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FaqComponent } from './faq.component';
+import { LMBrefComponent } from './lmbref.component';
 
-describe('FAQComponent', () => {
-  let component: FaqComponent;
-  let fixture: ComponentFixture<FaqComponent>;
+describe('LMBrefComponent', () => {
+  let component: LMBrefComponent;
+  let fixture: ComponentFixture<LMBrefComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FaqComponent ]
+      declarations: [ LMBrefComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FaqComponent);
+    fixture = TestBed.createComponent(LMBrefComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
