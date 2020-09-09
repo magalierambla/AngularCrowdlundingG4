@@ -51,13 +51,13 @@
                 <div class="card mb-4 py-3 border-left-primary">
                   <div class="card-body">
                     <div class="form-group">
-                      <label>{{ "nom_label" | translate }} : </label>
+                      <label>Nom : </label>
                       <input
                         type="text"
                         class="form-control"
                         [(ngModel)]="ObjetUpdateProfil.nom"
                         name="nom"
-                        placeholder="votre nom *"
+                        placeholder="Saisir votre nom *"
                         required
                         value=""
                       />
@@ -68,13 +68,13 @@
                 <div class="card mb-4 py-3 border-left-primary">
                   <div class="card-body">
                     <div class="form-group">
-                      <label>Votre prenom : </label>
+                      <label>Prénom : </label>
                       <input
                         type="text"
                         class="form-control"
                         [(ngModel)]="ObjetUpdateProfil.prenom"
                         name="prenom"
-                        placeholder="votre prenom *"
+                        placeholder="Saisir votre prénom *"
                         required
                         value=""
                       />
@@ -85,14 +85,14 @@
                 <div class="card mb-4 py-3 border-left-primary">
                   <div class="card-body">
                     <div class="form-group">
-                      <label>Votre adresse e-mail : </label>
+                      <label>E-mail : </label>
                       <input
                         type="text"
                         class="form-control"
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                         [(ngModel)]="ObjetUpdateProfil.login"
                         name="login"
-                        placeholder="Your Email *"
+                        placeholder="Saisir votre e-mail *"
                         required
                         value=""
                       />
@@ -103,8 +103,7 @@
                 <div class="card mb-4 py-3 border-left-primary">
                   <div class="card-body">
                     <div class="form-group">
-                      <label>Votre sex : </label>
-
+                      <label>Sexe : </label>
                       <select
                         class="form-control"
                         [(ngModel)]="ObjetUpdateProfil.sex"
@@ -112,8 +111,9 @@
                         required
                         value=""
                       >
-                        <option value="">Selectionner votre sex</option>
-
+                        <option value="" disabled selected>
+                          Sélectionner votre sexe
+                        </option>
                         <option
                           *ngFor="let option of arrayListSex"
                           [value]="option.key"
@@ -128,13 +128,13 @@
                 <div class="card mb-4 py-3 border-left-primary">
                   <div class="card-body">
                     <div class="form-group">
-                      <label>Votre mot de passe : </label>
+                      <label>Mot de passe : </label>
                       <input
                         type="password"
                         class="form-control"
                         [(ngModel)]="ObjetUpdateProfil.password"
                         name="password"
-                        placeholder="Your Password *"
+                        placeholder="Mot de passe *"
                         required
                         value=""
                       />
@@ -156,7 +156,7 @@
                     class="btn btn-primary btn-block"
                     [disabled]="!updateProfilForm.form.valid"
                   >
-                    Mettre a jour votre profil
+                    Mettre à jour votre profil
                   </button>
                 </div>
               </form>
@@ -168,7 +168,7 @@
                   <div class="card-body">
                     <mat-card class="add-photo-card">
                       <mat-card-header>
-                        <mat-card-title>Image profil</mat-card-title>
+                        <mat-card-title>Image Profil</mat-card-title>
                       </mat-card-header>
 
                       <img
@@ -177,32 +177,22 @@
                         alt=""
                         style="width: 25%; margin-left: 30%"
                       />
-
                       <div>
-                        <table>
-                          <tr>
-                            <td>
-                              <input
-                                #imageInput
-                                type="file"
-                                (change)="imageInputChange(imageInput)"
-                                accept="image/*"
-                              />
-                            </td>
-
-                            <td>
-                              <button
-                                class="btn btn-light btn-icon-split"
-                                (click)="addImage()"
-                              >
-                                <span class="icon text-gray-600">
-                                  <i class="fas fa-arrow-right"></i>
-                                </span>
-                                <span class="text"> Modifier</span>
-                              </button>
-                            </td>
-                          </tr>
-                        </table>
+                        <input
+                          #imageInput
+                          type="file"
+                          (change)="imageInputChange(imageInput)"
+                          accept="image/*"
+                        />
+                        <button
+                          class="btn btn-light btn-icon-split"
+                          (click)="addImage()"
+                        >
+                          <span class="icon text-gray-600">
+                            <i class="fas fa-arrow-right"></i>
+                          </span>
+                          <span class="text"> Modifier</span>
+                        </button>
                       </div>
                     </mat-card>
                   </div>

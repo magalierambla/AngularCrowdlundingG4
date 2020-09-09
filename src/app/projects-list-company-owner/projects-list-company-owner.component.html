@@ -32,11 +32,11 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-          <!------------------------- Début formulaire ----------------------------------------------->
+          <!-- Début formulaire -->
 
           <div class="row">
             <div class="col-lg-12">
-              <h3>LES FILTRES DE RECHERCHE</h3>
+              <h3>RECHERCHE PAR FILTRES</h3>
             </div>
           </div>
 
@@ -55,7 +55,7 @@
                         class="form-control bg-light border-0 small"
                         [(ngModel)]="tagSearch"
                         name="tagSearch"
-                        placeholder="Rechercher un projet par mot clé..."
+                        placeholder="Entrer mot clé"
                         aria-label="Search"
                         aria-describedby="basic-addon2"
                       />
@@ -74,8 +74,6 @@
               </div>
             </div>
 
-            <!------------------------------------------------------------------------>
-
             <div class="col-lg-3">
               <div class="form-group">
                 <label>Votre projet est porté par : </label>
@@ -86,7 +84,9 @@
                     (change)="onChangePorteProject($event.target.value)"
                     name="porte_project"
                   >
-                    <option value="">Selectionner porté de projet</option>
+                    <option value="" disabled selected hidden>
+                      Porteur du projet
+                    </option>
 
                     <option
                       [value]="i"
@@ -106,7 +106,7 @@
 
             <div class="col-lg-3">
               <div class="form-group">
-                <label>Categorie projet : </label>
+                <label>Catégorie du projet : </label>
 
                 <div class="controls">
                   <select
@@ -114,8 +114,9 @@
                     (change)="onChangeCategorieProject($event.target.value)"
                     name="categorie_project"
                   >
-                    <option value="">Selectionner categorie de projet</option>
-
+                    <option value="" disabled selected hidden>
+                      Catégorie du projet
+                    </option>
                     <option
                       [value]="i"
                       *ngFor="
@@ -134,7 +135,7 @@
 
             <div class="col-lg-3">
               <div class="form-group">
-                <label>Statut projet : </label>
+                <label>Statut du projet : </label>
 
                 <div class="controls">
                   <select
@@ -142,7 +143,9 @@
                     (change)="onChangeStatutProject($event.target.value)"
                     name="statut_project"
                   >
-                    <option value="">Selectionner statut de projet</option>
+                    <option value="" disabled selected hidden>
+                      Selectionner le statut
+                    </option>
 
                     <option
                       [value]="i"
@@ -164,13 +167,13 @@
           <div
             class="d-sm-flex align-items-center justify-content-between mb-4"
           >
-            <h1 class="h3 mb-0 text-gray-800">MES PROJETS</h1>
+            <h1 class="h3 mb-0 text-gray-800">TOUS LES PROJETS</h1>
             <a
               href="#"
               class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
               routerLink="/user-projetcs-add"
               routerLinkActive="active"
-              ><i class="fas fa-plus-circle fa-sm text-white-50"></i> Lancer un
+              ><i class="fas fa-download fa-sm text-white-50"></i> Lancer un
               projet</a
             >
           </div>

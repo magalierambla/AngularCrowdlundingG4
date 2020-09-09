@@ -53,7 +53,7 @@
                     (change)="onChangePorteProject($event.target.value)"
                     name="porte_project"
                   >
-                    <option value="">Selectionner porté de projet</option>
+                    <option value="">Porteur de projet</option>
 
                     <option
                       [value]="i"
@@ -73,7 +73,7 @@
 
             <div class="col-lg-3">
               <div class="form-group">
-                <label>Categorie projet : </label>
+                <label>Catégorie du projet : </label>
 
                 <div class="controls">
                   <select
@@ -81,7 +81,7 @@
                     (change)="onChangeCategorieProject($event.target.value)"
                     name="categorie_project"
                   >
-                    <option value="">Selectionner categorie de projet</option>
+                    <option value="">Sélectionner une catégorie</option>
 
                     <option
                       [value]="i"
@@ -101,7 +101,7 @@
 
             <div class="col-lg-3">
               <div class="form-group">
-                <label>Statut projet : </label>
+                <label>Statut du projet : </label>
 
                 <div class="controls">
                   <select
@@ -109,7 +109,7 @@
                     (change)="onChangeStatutProject($event.target.value)"
                     name="statut_project"
                   >
-                    <option value="">Selectionner statut de projet</option>
+                    <option value="">Sélectionner le statut du projet</option>
 
                     <option
                       [value]="i"
@@ -131,7 +131,7 @@
           <div
             class="d-sm-flex align-items-center justify-content-between mb-4"
           >
-            <h1 class="h3 mb-0 text-gray-800">LES PROJETS</h1>
+            <h1 class="h3 mb-0 text-gray-800">MES PROJETS</h1>
           </div>
 
           <div
@@ -139,7 +139,7 @@
             role="alert"
             *ngIf="listProjects.length == 0"
           >
-            <strong>Aucun projet!</strong> n'est disponible.
+            <strong>Aucun projet</strong> n'est disponible.
             <button
               type="button"
               class="close"
