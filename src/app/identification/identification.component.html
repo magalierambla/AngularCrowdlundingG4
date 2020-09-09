@@ -1,84 +1,121 @@
 <ngx-ui-loader></ngx-ui-loader>
+
 <app-nav-bar-accueil></app-nav-bar-accueil>
 
-                <div class="umbotron my-4">
+<div class="jumbotron my-4">
+  <h3>Inscription</h3>
 
-                    <h3>Inscription</h3>
+  <div class="alert alert-danger" *ngIf="isErreurInscription">
+    <strong>Erreur!</strong> inscription
+  </div>
 
-                    <div class="alert alert-danger"  *ngIf="isErreurInscription">
+  <form
+    class="form-horizontal"
+    #inscriptionForm="ngForm"
+    (ngSubmit)="onFormSubmitInscription()"
+  >
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="ObjetInscription.nom"
+        name="nomInscription"
+        placeholder="Votre nom *"
+        required
+        value=""
+      />
+    </div>
 
-                        <strong>Erreur!</strong>  inscription
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="ObjetInscription.prenom"
+        name="prenomInscription"
+        placeholder="Votre prenom *"
+        required
+        value=""
+      />
+    </div>
 
-                     </div>
+    <div class="control-group form-group">
+      <div class="controls">
+        <select
+          class="form-control"
+          [(ngModel)]="ObjetInscription.sex"
+          name="sexInscription"
+          required
+          value=""
+        >
+          <option value="">Selectionner votre sexe</option>
 
-                    <form   class="form-horizontal" #inscriptionForm = "ngForm"  (ngSubmit)="onFormSubmitInscription()">
+          <option value="H">Homme</option>
 
-                    <div class="form-group">
+          <option value="F">Femme</option>
+        </select>
+      </div>
+    </div>
 
-                        <input type="text" class="form-control" [(ngModel)] = "ObjetInscription.nom" name = "nomInscription" placeholder="votre nom *" required value="" />
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="ObjetInscription.pseudo_name"
+        name="pseudo_nameInscription"
+        placeholder="Votre pseudo *"
+        required
+        value=""
+      />
+    </div>
 
-                    </div>
+    <div class="form-group">
+      <input
+        type="email"
+        class="form-control"
+        [(ngModel)]="ObjetInscription.login"
+        name="emailInscription"
+        placeholder="Email *"
+        required
+        value=""
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        class="form-control"
+        [(ngModel)]="ObjetInscription.password"
+        name="passwordInscription"
+        placeholder="Mot de passe *"
+        required
+        value=""
+      />
+    </div>
 
-                    <div class="form-group">
+    <div class="form-group">
+      <dp-date-picker
+        placeholder="Date de naissance"
+        (onChange)="addEventDateNaissance($event)"
+        required="true"
+        [config]="datePickerConfig"
+      ></dp-date-picker>
+    </div>
 
-                        <input type="text" class="form-control" [(ngModel)] = "ObjetInscription.prenom" name = "prenomInscription" placeholder="votre prenom *" required value="" />
+    <div class="control-group form-group">
+      <div #recaptcha></div>
+    </div>
 
-                    </div>
+    <div class="alert alert-danger" *ngIf="isErreurCaptcha">
+      <strong>Erreur!</strong> Veuillez valider votre captcha
+    </div>
 
-                    <div class="control-group form-group">
-
-                        <div class="controls">
-
-                          <select class="form-control"  [(ngModel)] = "ObjetInscription.sex" name="sexInscription" required value="">
-
-                                  <option  value="">Selectionner votre sex</option>
-
-                                  <option  value="H" >Homme</option>
-
-                                  <option  value="F" >Femme</option>
-
-                          </select>
-
-                        </div>
-
-                      </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" [(ngModel)] = "ObjetInscription.pseudo_name" name = "pseudo_nameInscription" placeholder="votre pseudo-name *" required value="" />
-                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [(ngModel)] = "ObjetInscription.login" name = "emailInscription" placeholder="Your Email *" required value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" [(ngModel)] = "ObjetInscription.password" name = "passwordInscription" placeholder="Your Password *" required value="" />
-                    </div>
-
-                    <div class="form-group">
-
-                      <dp-date-picker  placeholder ="date de naissance"    (onChange)="addEventDateNaissance($event)"  required="true"  [config]="datePickerConfig"></dp-date-picker>
-
-
-                    </div>
-
-                    <div class="control-group form-group">
-
-                            <div #recaptcha ></div>
-                      </div>
-
-                      <div class="alert alert-danger"  *ngIf="isErreurCaptcha">
-                        <strong>Erreur!</strong>  Veuillez valider votre captcha
-                     </div>
-
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary" [disabled]="!inscriptionForm.form.valid">Inscription</button>
-                    </div>
-                </form>
-                </div>
-
-
-
-
-
-
-
+    <div class="form-group">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="!inscriptionForm.form.valid"
+      >
+        Inscription
+      </button>
+    </div>
+  </form>
+</div>

@@ -179,7 +179,7 @@ export class IdentificationComponent implements OnInit {
 
         this.cookie.set('infosUser', JSON.stringify(this.infosUser));
 
-        this.router.navigate(['/profilUser']);
+        this.router.navigate(['/user-my-projetcs']);
 
 
       }
@@ -234,7 +234,7 @@ export class IdentificationComponent implements OnInit {
 
           this.cookie.set('infosUser', JSON.stringify(this.infosUser));
 
-          this.router.navigate(['/profilUser']);
+          this.router.navigate(['/user-my-projetcs']);
 
 
         }
@@ -253,14 +253,11 @@ export class IdentificationComponent implements OnInit {
   }
 
   Logout(){
-
      // this.cookie.deleteAll();
-
     this.cookie.delete('infosUser'); // supression-cookie
-
+    console.log(this.infosUser)
 
   }
-
   tinyAlert(message: string){
 
     Swal.fire(message);

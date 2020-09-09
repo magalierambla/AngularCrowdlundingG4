@@ -32,7 +32,8 @@ import {ShowProfilUserAdminComponent} from './show-profil-user-admin/show-profil
 // tslint:disable-next-line:max-line-length
 import { ListProjectsByFiltreByTagAdminComponent } from './list-projects-by-filtre-by-tag-admin/list-projects-by-filtre-by-tag-admin.component';
 import { ConnectionComponent } from './connection/connection.component';
-import { FAQComponent } from './faq/faq.component';
+import { FaqComponent } from './faq/faq.component';
+import { LendMeEnBrefComponent } from './lend-me-en-bref/lend-me-en-bref.component';
 
 
 
@@ -62,8 +63,9 @@ const routes: Routes = [
   { path: 'user-projetcs-show/:token', component: ProjectShowCompanyOwnerComponent},
   { path: 'user-search-projetcs-by-tag', component: ListProjectsByFiltreByTagUserComponent},
   { path: 'user-messagerie', component: ListMessagerieUserComponent},
-  { path: 'connection', component: ConnectionComponent},
-  { path: 'faq', component: FAQComponent},
+  {path: 'connection', component: ConnectionComponent},
+  {path:'faq', component: FaqComponent},
+  {path: 'lmbref',component: LendMeEnBrefComponent}
 ];
 
 @NgModule({
