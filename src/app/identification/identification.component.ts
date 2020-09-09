@@ -253,14 +253,11 @@ export class IdentificationComponent implements OnInit {
   }
 
   Logout(){
-
      // this.cookie.deleteAll();
-
     this.cookie.delete('infosUser'); // supression-cookie
-
+    console.log(this.infosUser)
 
   }
-
   tinyAlert(message: string){
 
     Swal.fire(message);
