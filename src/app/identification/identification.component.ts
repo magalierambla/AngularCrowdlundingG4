@@ -179,7 +179,7 @@ export class IdentificationComponent implements OnInit {
 
         this.cookie.set('infosUser', JSON.stringify(this.infosUser));
 
-        this.router.navigate(['/profilUser']);
+        this.router.navigate(['/user-my-projetcs']);
 
 
       }
@@ -234,7 +234,7 @@ export class IdentificationComponent implements OnInit {
 
           this.cookie.set('infosUser', JSON.stringify(this.infosUser));
 
-          this.router.navigate(['/profilUser']);
+          this.router.navigate(['/user-my-projetcs']);
 
 
         }
