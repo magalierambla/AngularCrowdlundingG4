@@ -111,7 +111,7 @@ export class IdentificationComponent implements OnInit {
 
       this.isErreurInscription = true;
 
-      this.tinyAlert('La date de naissance doit etre inferiur à la date actuelle !!!');
+//this.alert('La date de naissance doit etre inferiur à la date actuelle !!!');
 
     } else {
 
