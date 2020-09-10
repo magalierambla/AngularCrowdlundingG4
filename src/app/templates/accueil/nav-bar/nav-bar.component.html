@@ -21,8 +21,7 @@
 
         <!-- Rubrique : Login -->
         <li class="nav-item">
-          <a *ngIf="!infosUser" class="nav-link" routerLink="/connection" routerLinkActive="active">Connexion</a>
-          <a class="nav-link" *ngIf="infosUser" (click)="deconnexion()">Deconnexion </a>
+          <a  class="nav-link" routerLink="/connection" routerLinkActive="active">Connexion</a>
         </li>
 
         <!-- Rubrique : FAQ pour répondre aux interrogations des utilisateurs -->
