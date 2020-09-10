@@ -22,7 +22,7 @@ declare var window: any;
 })
 export class ProjectAddCompanyOwnerComponent implements OnInit {
 
-@ViewChild('recaptcha', {static: true }) recaptchaElement: ElementRef;
+
 
      public infosUser: UserModel = new UserModel();
 
@@ -30,9 +30,6 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
 
      public   statutProject: StatutProjectModel = new StatutProjectModel();
 
-     private isvalidCaptcha = false ;
-
-     public isErreurCaptcha = false;
 
      public photosProject: Array<ImageProjectModel> = [];
 
@@ -161,7 +158,7 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
                                               //  contrePartieProject: ['', Validators.required],
        });
 
-    this.addRecaptchaScript();
+
 
     this.getListCategorieProject();
 
@@ -173,34 +170,7 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
 
 
 
-  addRecaptchaScript() {
 
-    window.grecaptchaCallback = () => {
-      this.renderReCaptcha();
-    };
-
-    (function(d, s, id, obj){
-      let js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { obj.renderReCaptcha(); return; }
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'recaptcha-jssdk', this));
-
-  }
-
-  renderReCaptcha() {
-    window.grecaptcha.render(this.recaptchaElement.nativeElement, {
-      sitekey: '6Lf4I6gZAAAAAMp1E9YI1FJghdQ20CNRtAV9d55y',
-      callback: (response) => {
-          console.log('response', response);
-
-          this.isvalidCaptcha = true;
-
-          this.isErreurCaptcha = false;
-      }
-    });
-  }
 
   addEventDateLimiteCollecte(event){
 
@@ -273,13 +243,7 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
 
     this.submitted = true;
 
-    if (!this.isvalidCaptcha){
 
-        this.isErreurCaptcha = true;
-
-    }
-
-    console.log('this.ObjetProject.contrePartieProject = ', this.ObjetProject.contrePartieProject);
 
     if (this.ObjetProject.contrePartieProject === undefined){
 
@@ -301,7 +265,7 @@ export class ProjectAddCompanyOwnerComponent implements OnInit {
 
      // console.log("!this.isErreurValidProject = ", !this.isErreurValidProject);
 
-    if (this.ObjetProject.contrePartieProject  && this.isvalidCaptcha    &&  !this.checkContrePartie){
+    if (this.ObjetProject.contrePartieProject     &&  !this.checkContrePartie){
 
       this.ObjetProject.total_fonds = 0;
 
