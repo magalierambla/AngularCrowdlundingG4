@@ -97,7 +97,7 @@ export class ProfilUserComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.addRecaptchaScript();
+
 
     const date = new Date();
 
@@ -114,34 +114,7 @@ export class ProfilUserComponent implements OnInit {
 
   }
 
-  addRecaptchaScript() {
 
-    window.grecaptchaCallback = () => {
-      this.renderReCaptcha();
-    };
-
-    (function(d, s, id, obj) {
-      let js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) { obj.renderReCaptcha(); return; }
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'recaptcha-jssdk', this));
-
-  }
-
-  renderReCaptcha() {
-    window.grecaptcha.render(this.recaptchaElement.nativeElement, {
-      sitekey: '6Lf4I6gZAAAAAMp1E9YI1FJghdQ20CNRtAV9d55y',
-      callback: (response) => {
-        console.log('response', response);
-
-        this.isvalidCaptcha = true;
-
-        this.isErreurCaptcha = false;
-      }
-    });
-  }
 
   onFormSubmitUpdateProfil() {
 
